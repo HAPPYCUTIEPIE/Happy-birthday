@@ -49,6 +49,7 @@
             cursor: pointer;
             box-shadow: 0 0 20px rgba(255, 20, 147, 0.5);
             transition: all 0.3s ease-in-out;
+            margin-top: 20px;
         }
 
         .mystery-box:hover {
@@ -66,8 +67,8 @@
             border-radius: 10px;
             position: absolute;
             left: 50%;
+            top: 75%;
             transform: translateX(-50%);
-            top: 70%;
             cursor: pointer;
             transition: all 0.3s ease-in-out;
         }
@@ -77,7 +78,6 @@
             left: calc(10% + (Math.random() * 80%));
             top: calc(30% + (Math.random() * 40%));
         }
-
     </style>
 </head>
 <body>
@@ -88,7 +88,7 @@
         <h1>💖 Happy Birthday, My Love! 🎂</h1>
         <br>
         <button class="mystery-box" onclick="nextPage()">Open Your Surprise 🎁</button>
-        <button class="not-ready">Not Ready for Surprise? 🤭</button>
+        <button class="not-ready" id="notReady">Not Ready for Surprise? 🤭</button>
     </div>
 
     <audio id="bg-music" loop autoplay>
@@ -104,10 +104,16 @@
             let audio = document.getElementById("bg-music");
             setTimeout(() => audio.play(), 1000);
         });
-    </script>
 
-    <script src="confetti.js"></script>
+        // Move the "Not Ready" button when hovered
+        const notReadyButton = document.getElementById("notReady");
+        notReadyButton.addEventListener("mouseover", function () {
+            let newX = Math.random() * (window.innerWidth - 150);
+            let newY = Math.random() * (window.innerHeight - 80);
+            notReadyButton.style.left = newX + "px";
+            notReadyButton.style.top = newY + "px";
+        });
+    </script>
 
 </body>
 </html>
-
