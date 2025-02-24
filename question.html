@@ -16,7 +16,6 @@
             background: linear-gradient(to right, #ff758c, #ff7eb3); /* Soft romantic pink */
             color: white;
             text-align: center;
-            overflow: hidden;
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -25,9 +24,9 @@
 
         .container {
             text-align: center;
-            max-width: 90%;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
+            max-width: 80%;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.15);
             border-radius: 15px;
             box-shadow: 0px 0px 20px rgba(255, 20, 147, 0.3);
         }
@@ -45,7 +44,7 @@
         .button-container {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 30px;
             margin-top: 30px;
             position: relative;
         }
@@ -75,14 +74,14 @@
         /* Prashant Bhaiya Button */
         #prashant-btn {
             background: linear-gradient(45deg, #f8a5c2, #f78fb3);
-            position: absolute;
-            transition: top 0.2s, left 0.2s;
+            position: relative;
         }
 
         /* Moves Prashant Bhaiya button away when hovered */
         #prashant-btn:hover {
-            left: calc(10% + (Math.random() * 80%));
-            top: calc(30% + (Math.random() * 40%));
+            position: absolute;
+            left: calc(30% + (Math.random() * 40px - 20px));
+            top: calc(30% + (Math.random() * 40px - 20px));
         }
 
         /* Pop-up styling */
@@ -122,7 +121,7 @@
 
         <div class="button-container">
             <button id="prajwal-btn" class="answer-btn" onclick="correctAnswer()">Prajwal (Me) 😘</button>
-            <button id="prashant-btn" class="answer-btn">Prashant Bhaiya</button>
+            <button id="prashant-btn" class="answer-btn">Prashant Bhaiya (Topper Teacher) 📚</button>
         </div>
     </div>
 
@@ -144,7 +143,7 @@
         }
 
         document.getElementById("prashant-btn").addEventListener("mouseover", function () {
-            alert("Haha, nice try!😂");
+            alert("Haha, nice try! But he's just a teacher, come on! 😂");
         });
     </script>
 
