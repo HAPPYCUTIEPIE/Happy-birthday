@@ -13,24 +13,28 @@
         }
 
         body {
-            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            background: linear-gradient(to right, #ff758c, #ff7eb3); /* Soft romantic pink */
             color: white;
             text-align: center;
             overflow: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
             text-align: center;
             max-width: 90%;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px rgba(255, 20, 147, 0.3);
         }
 
         h1 {
             font-size: 2.5rem;
-            text-shadow: 0px 0px 10px #ff69b4;
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
         }
 
         .question {
@@ -43,6 +47,7 @@
             justify-content: center;
             gap: 20px;
             margin-top: 30px;
+            position: relative;
         }
 
         .answer-btn {
@@ -56,6 +61,7 @@
             transition: all 0.3s ease-in-out;
         }
 
+        /* Prajwal Button */
         #prajwal-btn {
             background: linear-gradient(45deg, #ff4b91, #ff006e);
             box-shadow: 0 0 20px rgba(255, 20, 147, 0.5);
@@ -66,17 +72,46 @@
             box-shadow: 0 0 30px rgba(255, 20, 147, 0.8);
         }
 
+        /* Prashant Bhaiya Button */
         #prashant-btn {
             background: linear-gradient(45deg, #f8a5c2, #f78fb3);
-            position: relative;
+            position: absolute;
+            transition: top 0.2s, left 0.2s;
         }
 
         /* Moves Prashant Bhaiya button away when hovered */
         #prashant-btn:hover {
-            position: absolute;
             left: calc(10% + (Math.random() * 80%));
             top: calc(30% + (Math.random() * 40%));
         }
+
+        /* Pop-up styling */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 20, 147, 0.5);
+            text-align: center;
+            font-size: 1.3rem;
+        }
+
+        .popup button {
+            margin-top: 10px;
+            padding: 10px;
+            border: none;
+            background: #ff006e;
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
     </style>
 </head>
 <body>
@@ -86,19 +121,26 @@
         <p class="question">Who do you love the most? 🤔</p>
 
         <div class="button-container">
-            <button id="prajwal-btn" class="answer-btn" onclick="correctAnswer()">Prajwal(Me)</button>
-            <button id="prashant-btn" class="answer-btn">Prashant Bhaiya?</button>
+            <button id="prajwal-btn" class="answer-btn" onclick="correctAnswer()">Prajwal (Me) 😘</button>
+            <button id="prashant-btn" class="answer-btn">Prashant Bhaiya</button>
         </div>
+    </div>
+
+    <!-- Pop-up Message -->
+    <div id="popup" class="popup">
+        <p id="popup-text"></p>
+        <button onclick="closePopup()">OKAY BABY 💖</button>
     </div>
 
     <script>
         function correctAnswer() {
-            alert("Aww, I knew it! 😘 You're the cutest!");
-            window.location.href = "nextpage.html"; // Change this to the next page
+            document.getElementById("popup-text").innerText = "Aww, I knew it! 😘 You're the cutest!";
+            document.getElementById("popup").style.display = "block";
         }
 
-        function wrongAnswer() {
-            alert("Ayyoo Pranati! You really picked Prashant Bhaiya? 😡 Try again! 😂");
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+            window.location.href = "nextpage.html"; // Redirect to next page
         }
 
         document.getElementById("prashant-btn").addEventListener("mouseover", function () {
