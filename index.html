@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Pranati 🎉</title>
+    <title>Happy Birthday, Pranati 🎉</title>
     <style>
         * {
             margin: 0;
@@ -13,8 +13,8 @@
         }
 
         body {
-            background: linear-gradient(to right, #111, #222);
-            color: gold;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            color: white;
             text-align: center;
             overflow: hidden;
         }
@@ -29,17 +29,17 @@
 
         h1 {
             font-size: 3.5rem;
-            text-shadow: 0px 0px 20px gold;
+            text-shadow: 0px 0px 20px #ff69b4;
             animation: glow 1.5s infinite alternate;
         }
 
         @keyframes glow {
-            from { text-shadow: 0px 0px 10px gold; }
-            to { text-shadow: 0px 0px 30px gold; }
+            from { text-shadow: 0px 0px 10px #ff69b4; }
+            to { text-shadow: 0px 0px 30px #ff1493; }
         }
 
         .mystery-box {
-            background: linear-gradient(45deg, #FFD700, #FFAA00);
+            background: linear-gradient(45deg, #ff4b91, #ff006e);
             border: none;
             padding: 15px 30px;
             font-size: 1.5rem;
@@ -47,14 +47,37 @@
             font-weight: bold;
             border-radius: 10px;
             cursor: pointer;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            box-shadow: 0 0 20px rgba(255, 20, 147, 0.5);
             transition: all 0.3s ease-in-out;
         }
 
         .mystery-box:hover {
             transform: scale(1.1);
-            box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+            box-shadow: 0 0 30px rgba(255, 20, 147, 0.8);
         }
+
+        .not-ready {
+            background: linear-gradient(45deg, #f8a5c2, #f78fb3);
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.2rem;
+            color: white;
+            font-weight: bold;
+            border-radius: 10px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 70%;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .not-ready:hover {
+            position: absolute;
+            left: calc(10% + (Math.random() * 80%));
+            top: calc(30% + (Math.random() * 40%));
+        }
+
     </style>
 </head>
 <body>
@@ -62,13 +85,14 @@
     <canvas id="confetti"></canvas>
 
     <div class="container">
-        <h1>🎉 Happy Birthday, Pranati! 🎂</h1>
+        <h1>💖 Happy Birthday, My Love! 🎂</h1>
         <br>
         <button class="mystery-box" onclick="nextPage()">Open Your Surprise 🎁</button>
+        <button class="not-ready">Not Ready for Surprise? 🤭</button>
     </div>
 
     <audio id="bg-music" loop autoplay>
-        <source src="birthday_song.mp3" type="audio/mpeg">
+        <source src="romantic_song.mp3" type="audio/mpeg">
     </audio>
 
     <script>
@@ -86,3 +110,4 @@
 
 </body>
 </html>
+
