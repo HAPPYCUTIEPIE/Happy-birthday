@@ -6,13 +6,13 @@ canvas.height = window.innerHeight;
 
 const confettiPieces = [];
 
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 120; i++) {
     confettiPieces.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        size: Math.random() * 8 + 2,
-        speed: Math.random() * 3 + 2,
-        color: `hsl(${Math.random() * 360}, 100%, 70%)`
+        size: Math.random() * 6 + 2,
+        speed: Math.random() * 2 + 1,
+        color: `hsl(${Math.random() * 360}, 100%, 80%)`
     });
 }
 
