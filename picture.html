@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prove You're Pranati 😏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #ff758c, #ff7eb3); /* Soft pink gradient */
+            color: white;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px rgba(255, 20, 147, 0.3);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin: 15px 0;
+        }
+
+        /* Upload Button */
+        .upload-btn {
+            background: white;
+            color: #ff4b91;
+            padding: 12px 20px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .upload-btn:hover {
+            background: #ff4b91;
+            color: white;
+            box-shadow: 0 0 15px rgba(255, 20, 147, 0.5);
+        }
+
+        /* Hidden File Input */
+        #file-input {
+            display: none;
+        }
+
+        /* Uploaded Image Preview */
+        .image-preview {
+            display: none;
+            margin-top: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 20, 147, 0.5);
+        }
+
+        /* Compliment Section */
+        .compliment {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Next Button */
+        .next-btn {
+            display: none;
+            background: linear-gradient(45deg, #ff4b91, #ff006e);
+            color: white;
+            padding: 12px 25px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .next-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(255, 20, 147, 0.8);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Wait, We Still Have Doubts... 🤨</h1>
+        <p>Upload your cutest picture to prove you're really Pranati! 🥰</p>
+        
+        <button class="upload-btn" onclick="document.getElementById('file-input').click()">Upload Your Pic 📷</button>
+        <input type="file" id="file-input" accept="image/*" onchange="showImage(event)">
+        
+        <!-- Image Preview -->
+        <img id="preview-img" class="image-preview" width="250" alt="Your Cute Pic 😘">
+        
+        <!-- Compliment Message -->
+        <div id="compliment-msg" class="compliment">
+            😍 OMG! You're literally the cutest girl alive! 🌸💖
+        </div>
+        
+        <!-- Next Page Button -->
+        <button id="next-btn" class="next-btn" onclick="nextPage()">Next ➡️</button>
+    </div>
+
+    <script>
+        function showImage(event) {
+            const preview = document.getElementById('preview-img');
+            const file = event.target.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.style.display = "block";
+
+                    // Show compliment message and next button
+                    document.getElementById("compliment-msg").style.display = "block";
+                    document.getElementById("next-btn").style.display = "block";
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function nextPage() {
+            window.location.href = "nextpage.html"; // Redirect to next page
+        }
+    </script>
+
+</body>
+</html>
