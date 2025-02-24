@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Pranati! 🎂</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="title">🎂 Happy Birthday, Pranati! 🎂</h1>
+        <p class="subtitle">Make a wish and cut the cake! ✨</p>
+
+        <!-- Cake -->
+        <div class="cake">
+            <img src="cake.png" alt="Birthday Cake" class="cake-img">
+            <button class="cut-button" onclick="cutCake()">🍰 Cut Cake</button>
+        </div>
+
+        <!-- Secret Message (Hidden at First) -->
+        <div id="message" class="hidden">
+            <p class="love-message">"Happy Birthday, My Love! 💖 You are the sweetest, kindest, and most beautiful person in my life. I love you endlessly, and I hope this little surprise made your day as special as you are! 🥰✨"</p>
+            <button class="next-button" onclick="showGift()">🎁 Open Your Gift</button>
+        </div>
+
+        <!-- Gift Surprise (Hidden at First) -->
+        <div id="gift" class="hidden">
+            <img src="giftbox.png" alt="Gift Box" class="gift-img" onclick="openGift()">
+            <p class="gift-text hidden">✨ Surprise! There's more waiting for you... Click to continue! ✨</p>
+        </div>
+    </div>
+
+    <!-- Confetti & Music -->
+    <div id="confetti"></div>
+    <audio id="bg-music" loop>
+        <source src="romantic-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
