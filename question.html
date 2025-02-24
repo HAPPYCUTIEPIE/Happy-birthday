@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Are You Really Pranati? 🤔</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            max-width: 90%;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-shadow: 0px 0px 10px #ff69b4;
+        }
+
+        .question {
+            font-size: 1.8rem;
+            margin: 20px 0;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .answer-btn {
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        #prajwal-btn {
+            background: linear-gradient(45deg, #ff4b91, #ff006e);
+            box-shadow: 0 0 20px rgba(255, 20, 147, 0.5);
+        }
+
+        #prajwal-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(255, 20, 147, 0.8);
+        }
+
+        #prashant-btn {
+            background: linear-gradient(45deg, #f8a5c2, #f78fb3);
+            position: relative;
+        }
+
+        /* Moves Prashant Bhaiya button away when hovered */
+        #prashant-btn:hover {
+            position: absolute;
+            left: calc(10% + (Math.random() * 80%));
+            top: calc(30% + (Math.random() * 40%));
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🤨 Wait... Are You Really Pranati? 🤨</h1>
+        <p class="question">Who do you love the most? 🤔</p>
+
+        <div class="button-container">
+            <button id="prajwal-btn" class="answer-btn" onclick="correctAnswer()">Prajwal(Me)</button>
+            <button id="prashant-btn" class="answer-btn">Prashant Bhaiya?</button>
+        </div>
+    </div>
+
+    <script>
+        function correctAnswer() {
+            alert("Aww, I knew it! 😘 You're the cutest!");
+            window.location.href = "nextpage.html"; // Change this to the next page
+        }
+
+        function wrongAnswer() {
+            alert("Ayyoo Pranati! You really picked Prashant Bhaiya? 😡 Try again! 😂");
+        }
+
+        document.getElementById("prashant-btn").addEventListener("mouseover", function () {
+            alert("Haha, nice try!😂");
+        });
+    </script>
+
+</body>
+</html>
